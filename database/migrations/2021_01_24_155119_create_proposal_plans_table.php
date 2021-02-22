@@ -17,7 +17,7 @@ class CreateProposalPlansTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('title');
-            $table->string('content');
+            $table->string('content', 1024);
             $table->string('price');
             $table->foreignId('city_id')->constrained('m_cities');
             $table->foreignId('category_id')->constrained('m_categories');

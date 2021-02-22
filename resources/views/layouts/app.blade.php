@@ -20,10 +20,21 @@
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
+        @include('components.parts.header')
+
+        <!-- フラッシュメッセージ -->
+        @if (session()->has('message'))
+            <div class="text-white text-center px-6 py-4 border-0 rounded relative mb-4 bg-green-500">
+                <span class="inline-block align-middle mr-8">
+                    <b class="capitalize">{{ session('message') }}</b>
+                </span>
+                <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
+                    <span>×</span>
+                </button>
+            </div>
+        @endif
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">

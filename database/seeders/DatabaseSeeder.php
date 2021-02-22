@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MPrefectureSeeder::class,
             MCitySeeder::class,
+            MCategorySeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }
